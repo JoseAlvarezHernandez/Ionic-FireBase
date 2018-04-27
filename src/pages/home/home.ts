@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 
-import { FirebaseList, AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
 
 import { Observable } from '@firebase/util';
 
@@ -12,7 +12,7 @@ import { Observable } from '@firebase/util';
 
 export class HomePage {
 
-  tasksRef: FirebaseList<any>;
+  tasksRef: AngularFireList<any>;
   tasks: Observable<any[]>;
 
   constructor(
