@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Tasks
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item-sliding *ngFor="let task of tasks | async">
+      <ion-item>
+        <ion-label>{{ task.title }}</ion-label>
+        <ion-checkbox (ionChange)="updateTask( task )" [checked]="task.done"></ion-checkbox>
+      </ion-item>
+      <ion-item-options>
+        <button ion-button danger (click)="removeTask( task )">
+          Delete
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
